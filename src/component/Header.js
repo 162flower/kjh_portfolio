@@ -1,37 +1,44 @@
-import { useState } from "react";
+import styled from "styled-components";
+import Nav from "../sub_component/Nav";
 
-const Header = ({setCategory}) => {
-
-    const [selectCate, setSelectCate] = useState('cateAll');
-
-    const clickBtn= (cateName) => {
-        setSelectCate(cateName);
-        setCategory(cateName);
-    }
+const Header = () => {
 
     return (
-        <div className="Header">
-            <h2>Movie List</h2>
-            <div>
-                <button
-                    onClick={()=> clickBtn('cateAll')}
-                    className={selectCate==='cateAll'?'active':''}
-                >전체</button>
-                <button onClick={()=> clickBtn(2020)}
-                    className={selectCate===2020?'active':''}
-                >2020</button>
-                <button onClick={()=> clickBtn(2021)}
-                    className={selectCate===2021?'active':''}
-                >2021</button>
-                <button onClick={()=> clickBtn(2022)}
-                    className={selectCate===2022?'active':''}
-                >2022</button>
-                <button onClick={()=> clickBtn(2023)}
-                    className={selectCate===2023?'active':''}
-                >2023</button>
+        <HeaderWrap>
+            <div className="logo">
+                <h1>Ko Ju Hee_Portfolio</h1>
             </div>
-        </div>
+            <Nav />
+        </HeaderWrap>
     );
 };
 
 export default Header;
+
+const HeaderWrap = styled.div`
+    position: fixed;
+    left: 12.5%;
+    right: 12.5%;
+    display: flex;
+    justify-content: space-between;
+    z-index: 10;
+    .logo{
+        width: 35%;
+        border: 1px solid #fff;
+        border-top: none;
+        border-radius: 0 0 3vw 3vw;
+        background-color: rgba(0, 0, 0, 0.8);
+        text-align: center;
+        box-sizing: border-box;
+        pointer-events : none;
+    }
+    .logo h1{
+        color: #fff;
+        font-size: clamp(9px, 2.3vw, 40px);
+        line-height: 3em;
+    }
+    @media screen and (max-width: 1023px) {
+        left: 20px;
+        right: 20px;
+    }
+`
