@@ -119,11 +119,11 @@ const Project = () => {
                             <div className="txt">
                                 <p className="p_title">
                                     {item.title}
-                                    <span>{item.solo_team} Project/{item.web}웹</span>
+                                    <span>{item.solo_team} Project / {item.web}웹</span>
                                 </p>
                                 <div className="skills">
                                     {item.skills.map((it, idx) =>
-                                        <p key={idx}>
+                                        <p key={idx} className={it}>
                                             {it}
                                         </p>
                                     )}
@@ -137,11 +137,11 @@ const Project = () => {
                                 </div>
                                 <div className="deploy_link">
                                     <p className="txt">배포링크</p>
-                                    <p>{item.deploymentLink}</p>
+                                    <p className="link">{item.deploymentLink}</p>
                                 </div>
                                 <div className="reposi">
                                     <p className="txt">레포지토리</p>
-                                    <p>{item.repository}</p>
+                                    <p className="link">{item.repository}</p>
                                 </div>
                             </div>
                         </li>
@@ -158,7 +158,7 @@ const Projectwrap = styled.div`
     padding: 0 12.5%;
     .title{
         border-bottom: 1px solid #fff;
-        margin-bottom: 70px;
+        margin-bottom: 4vw;
         h2{
             font-size: clamp(28px, 3vw, 40px);
             line-height: 3vw;
@@ -181,37 +181,176 @@ const Projectwrap = styled.div`
                 width: 50%;
             }
             .p_title{
-                font-size: clamp(15px, 2vw, 20px);
+                font-size: clamp(18px, 2vw, 25px);
                 font-weight: 500;
-                margin-bottom: 10px;
+                margin-bottom: 1vw;
                 span{
-                    margin-left: 20px;
-                    font-size: clamp(13px, 2vw, 17px);
+                    margin-left: 1vw;
+                    font-size: clamp(10px, 2vw, 17px);
                     font-weight: 400;
                 }
             }
             .skills{
                 display: flex;
+                flex-wrap: wrap;
                 margin-bottom: 15px;
                 p{
-                    margin-right: 10px;
+                    margin-right: 0.5vw;
+                    margin-bottom: 1vw;
+                    font-size: clamp(12px, 1.5vw, 18px);
                     font-weight: 700;
                     color: #000;
                     background-color: #fff;
-                    padding: 5px 20px 7px 30px;
+                    padding: 8px 20px 11px 40px;
                     border-radius: 10px;
+                    background-size: 25px;
+                    background-repeat: no-repeat;
+                    background-position: 9px 7px;
+                    &:last-child{
+                        margin-right: 0;
+                    }
+                }
+                .HTML{
+                    background-image: url(./assets/icon_html.png);
+                }
+                .CSS{
+                    background-image: url(./assets/icon_css.png);
+                }
+                .JQuery{
+                    background-image: url(./assets/icon_jquery.png);
+                }
+                .PhotoShop{
+                    background-image: url(./assets/icon_PhotoShop.png);
+                }
+                .Figma{
+                    background-image: url(./assets/icon_Figma.png);
+                }
+                .JavaScript{
+                    background-image: url(./assets/icon_JavaScript.png);
+                }
+                .React{
+                    background-image: url(./assets/icon_React.png);
                 }
             }
             .todo_list{
                 padding-left: 1vw;
-                p::before{
+                margin-bottom: 2vw;
+                p{
+                    position: relative;
+                    font-size: clamp(13px, 2vw, 20px);
+                    line-height: 1.5em;
+                    margin-bottom: 0.3vw;
+                }
+                p::after{
                     content: "-";
+                    position: absolute;
+                    top: 0;
+                    left: -1vw;
                 } 
+            }
+            .deploy_link{
+                margin-bottom: 0.5vw;
+            }
+            .deploy_link, .reposi{
+                display: flex;
+                align-items: center;
+                .txt{
+                    width: 17%;
+                    text-align: center;
+                    margin-right: 1vw;
+                    font-size: clamp(10px, 1.5vw, 18px);
+                    font-weight: 700;
+                    color: #000;
+                    background-color: #fff;
+                    padding: 10px 15px 12px 15px;
+                    border-radius: 10px;
+                }
+                .link{
+                    font-size: clamp(10px, 1.5vw, 18px);
+                }
             }
         }
     }
     @media screen and (max-width: 1023px) {
         padding: 0 20px;
+        .project_list{
+            li{
+                .skills{
+                    p{
+                        margin-right: 1vw;
+                    }
+                }
+            }
+        }
+    }
+    @media screen and (max-width: 768px) {
+        .project_list{
+            padding-top: 3vw;
+            li{
+                position: relative;
+                padding: 2vw;
+                padding-bottom: 24vw;
+                border-left: 10px solid rgba(255,255,255,0.5);
+                border-right: 10px solid rgba(255,255,255,0.5);
+                border-top: 1px solid rgba(255,255,255,0.5);
+                border-bottom: 1px solid rgba(255,255,255,0.5);
+                border-radius: 10px;
+                .photo{
+                    margin-right: 25px;
+                }
+                .p_title{
+                    padding-bottom: 1vw;
+                    border-bottom: 1px solid rgba(255,255,255,0.3);
+                    margin-bottom: 1vw;
+                }
+                .skills{
+                    margin-bottom: 1.5vw;
+                    border-bottom: 1px solid rgba(255,255,255,0.3);
+                    p{
+                        padding: 1px 15px 3px 32px;
+                        background-size: 19px;
+                        background-position: 7px 3px;
+                    }
+                }
+                .todo_list{
+                    position: absolute;
+                    top: 28vw;
+                    left: 2vw;
+                }
+                .deploy_link{
+                    margin-bottom: 0.8vw;
+                }
+                .deploy_link, .reposi{
+                    .txt{
+                        width: 17%;
+                        padding: 1px 5px 2px 5px;
+                    }
+                }
+                &::after{
+                    content: "";
+                    position: absolute;
+                    bottom: -8vw;
+                    left: 50%;
+                    display: block;
+                    width: 2px;
+                    height: 8vw;
+                    background-color: rgba(255,255,255,0.3);
+                }
+                &:last-child::after{
+                    display:none;
+                }
+                // &::before{
+                //     content: "";
+                //     position: absolute;
+                //     bottom: -8vw;
+                //     right: 15%;
+                //     display: block;
+                //     width: 2px;
+                //     height: 8vw;
+                //     background-color: rgba(255,255,255,0.3);
+                // }
+            }
+        }
     }
     @media screen and (max-width: 767px) {
         .title{

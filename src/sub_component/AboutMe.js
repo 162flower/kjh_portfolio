@@ -9,7 +9,7 @@ const AboutMe = () => {
             </div>
             <div className="contentBox">
                 <div className="photo">
-                    <img src="./assets/profile_photo.jpg" />
+                    <img src="./assets/profile_photo.jpg" alt="프로필 사진"/>
                 </div>
                 <div className="info">
                     <p className="name">고주희<span>KO JU HEE</span></p>
@@ -43,7 +43,7 @@ const AboutMeWrap = styled.div`
     margin-bottom: 15vw;
     .title{
         border-bottom: 1px solid #fff;
-        margin-bottom: 30px;
+        margin-bottom: 3vw;
         h2{
             font-size: clamp(28px, 3vw, 40px);
             line-height: 3vw;
@@ -65,17 +65,17 @@ const AboutMeWrap = styled.div`
             }
         }
         .name{
-            font-size: clamp(18px, 1.8vw, 25px);
+            font-size: clamp(18px, 1.8vw, 30px);
             margin-bottom: 20px;
             span{
-                font-size: clamp(15px, 1.5vw, 20px);
+                font-size: clamp(15px, 1.5vw, 24px);
                 margin-left: 10px;
             }
         }
         .strength{
             margin-bottom: 20px;
             p{
-                font-size: clamp(12px, 1.5vw, 20px);
+                font-size: clamp(12px, 1.5vw, 24px);
                 line-height: 2em;
                 padding-left: 2.5vw;
                 background-image: url('./assets/icon_check.png');
@@ -86,16 +86,16 @@ const AboutMeWrap = styled.div`
             }
         }
         .sum_strength{
-            font-size: clamp(12px, 1.5vw, 20px);
+            font-size: clamp(12px, 1.5vw, 23px);
             line-height: 1.6em;
             margin-bottom: 20px;
         }
         .career{
-            font-size: clamp(12px, 1.5vw, 20px);
+            font-size: clamp(12px, 1.5vw, 22px);
             font-weight: 400;
             line-height: 1.7em;
             span{
-                margin-right: 10px;
+                margin-right: 1vw;
             }
         }
     }

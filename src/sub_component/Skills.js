@@ -85,16 +85,18 @@ const Skills = () => {
                 <ul>
                     {skillList.map((item)=>
                         <li key={item.id} className={item.skillName}>
-                            <p className="photo"><img src={item.icon}/></p>
+                            <p className="photo"><img src={item.icon} alt={item.skillName}/></p>
                             <p className="name">{item.skillName}</p>
                         </li>
                     )}
                     <li className="skillListEtc">
-                        {skillList_etc.map((item)=>
-                            <p key={item.id} className={item.name}>
-                                <img src={item.icon}/>
-                            </p>    
-                        )}
+                        <div>
+                            {skillList_etc.map((item)=>
+                                <p key={item.id} className={item.name}>
+                                    <img src={item.icon} alt={item.name}/>
+                                </p>    
+                            )}
+                        </div>
                     </li>
                 </ul>
             </div>
@@ -108,7 +110,7 @@ const SkillsWrap = styled.div`
     margin-bottom: 15vw;
     .title{
         border-bottom: 1px solid #fff;
-        margin-bottom: 30px;
+        margin-bottom: 3vw;
         h2{
             font-size: clamp(28px, 3vw, 40px);
             line-height: 3vw;
@@ -128,7 +130,7 @@ const SkillsWrap = styled.div`
             background-color: #fff;
             color: #000;
             text-align: center;
-            margin-right: 2vw;
+            margin-right: 1.95vw;
             margin-bottom: 40px;
             border-radius: 10px;
             img{
@@ -136,7 +138,7 @@ const SkillsWrap = styled.div`
             }
             .name{
                 font-size: clamp(10px, 1.5vw, 22px);
-                font-weight: 500;
+                font-weight: 600;
                 margin-top: 10px;
             }
         }
@@ -144,12 +146,19 @@ const SkillsWrap = styled.div`
             margin-right: 0;
         }
         .skillListEtc{
-            display: flex;
-            align-items: center;
+            >div{
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
             width: 36%;
             padding: 0 2vw;
             box-sizing: initial;
             margin-right: 0;
+            p{
+                margin: 0 0.5vw;
+            }
         }
     }
     @media screen and (max-width: 1023px) {
