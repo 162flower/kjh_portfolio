@@ -50,7 +50,7 @@ const HomeWrap = styled.div`
     @media screen and (max-width: 1023px) {
         padding: 0 20px;
         padding-top: 15vw;
-        margin-bottom: 60vw;
+        margin-bottom: 50vw;
         text-align: center;
         .egg_click{
             position: initial;

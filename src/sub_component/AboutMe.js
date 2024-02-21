@@ -19,8 +19,11 @@ const AboutMe = () => {
                         <p>체계적, 계획적, 구조화된 것을 좋아하는 타고난 개발자의 특성을 지닌 INFJ</p>
                     </div>
                     <div className="sum_strength">
-                        <p>빠르게 변화하는 개발 트랜드 속에서<br />
-                            저의 강점을 가지고 빠르게 적응하고 성장해나가는 프론트엔드 개발자가 되겠습니다.</p>
+                        <p>
+                            빠르게 변화하는 개발 트랜드 속에서<br />
+                            저의 강점을 가지고 빠르게 적응하고 성장해나가는<br />
+                            프론트엔드 개발자가 되겠습니다.
+                        </p>
                     </div>
                     <div className="career">
                         <p><span>2023.09~2024.03</span>울산그린컴퓨터아카데미 프론트엔드 실무양성 직업훈련 수료</p>
@@ -37,46 +40,62 @@ export default AboutMe;
 
 const AboutMeWrap = styled.div`
     padding: 0 12.5%;
+    margin-bottom: 15vw;
     .title{
         border-bottom: 1px solid #fff;
         margin-bottom: 30px;
         h2{
-            font-size: 2vw;
-            line-height: 2vw;
+            font-size: clamp(28px, 3vw, 40px);
+            line-height: 3vw;
             color: #fff;
         }
     }
     .contentBox{
         display: flex;
+        align-items: center;
         color: #fff;
         .photo{
-            width: 30%;
+            width: 35%;
             border: 1px solid #fff;
             border-radius: 50%;
             overflow: hidden;
-            margin-right: 20px;
+            margin-right: 40px;
             img{
                 width: 100%;
             }
         }
         .name{
-            font-size: 1.8vw;
-            margin-bottom: 10px;
+            font-size: clamp(18px, 1.8vw, 25px);
+            margin-bottom: 20px;
             span{
-                font-size: 1.5vw;
+                font-size: clamp(15px, 1.5vw, 20px);
                 margin-left: 10px;
             }
         }
         .strength{
-            margin-bottom: 10px;
+            margin-bottom: 20px;
             p{
-                font-size: 1.5vw;
-                line-height: 2.5vw;
-                padding-left: 3vw;
+                font-size: clamp(12px, 1.5vw, 20px);
+                line-height: 2em;
+                padding-left: 2.5vw;
                 background-image: url('./assets/icon_check.png');
                 background-repeat: no-repeat;
-                background-size: 2.5vw;
+                background-size: clamp(13px, 2.5vw, 28px);
+                background-position: 0 0.3vw;
                 
+            }
+        }
+        .sum_strength{
+            font-size: clamp(12px, 1.5vw, 20px);
+            line-height: 1.6em;
+            margin-bottom: 20px;
+        }
+        .career{
+            font-size: clamp(12px, 1.5vw, 20px);
+            font-weight: 400;
+            line-height: 1.7em;
+            span{
+                margin-right: 10px;
             }
         }
     }
@@ -85,6 +104,66 @@ const AboutMeWrap = styled.div`
     }
     @media screen and (max-width: 1023px) {
         padding: 0 20px;
+        .photo{
+            margin-bottom: 0;
+        }
+    }
+    @media screen and (max-width: 767px) {
+        .title{
+            h2{
+                font-size: 3.5vw;
+                line-height: 3.5vw;
+                color: #fff;
+            }
+        }
+        .contentBox{
+            position: relative;
+            display: block;
+            .photo{
+                position: absolute;
+                top: 0;
+                width: 10vw;
+            }
+            .name{
+                font-size: clamp(20px, 1.5vw, 25px);
+                margin-left: 13vw;
+                line-height: 10vw;
+            }
+            .strength{
+                p{
+                    font-size: clamp(13px, 2.5vw, 18px);
+                    line-height: 1.7em;
+                    padding-left: 4vw;
+                    background-position: 0 8px;
+                }
+            }
+            .sum_strength{
+                font-size: clamp(13px, 2.5vw, 18px);
+                text-align: center;
+                margin-bottom: 30px;
+                border: 1px solid rgba(255,255,255,0.7);
+                border-radius: 20px;
+                padding: 10px;
+            }
+            .career{
+                font-size: clamp(13px, 2.5vw, 18px);
+                line-height: 1.5em;
+            }
+        }
+    }
+    @media screen and (max-width: 450px) {
+        .career{
+            p{
+                margin-bottom: 10px;
+                color: rgba(255,255,255,0.8);
+            }
+            span{
+                display: block;
+                margin-bottom: 3px;
+                font-size: clamp(14px, 2.5vw, 18px);
+                color: rgba(255,255,255);
+            }
+        }
     }
 
 `
