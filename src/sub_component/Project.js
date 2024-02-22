@@ -118,8 +118,8 @@ const Project = () => {
                             </div>
                             <div className="txt">
                                 <p className="p_title">
-                                    {item.title}
-                                    <span>{item.solo_team} Project / {item.web}웹</span>
+                                    <span className="tit">{item.title}</span>
+                                    <span className="solo_team">{item.solo_team} Project / {item.web}웹</span>
                                 </p>
                                 <div className="skills">
                                     {item.skills.map((it, idx) =>
@@ -156,6 +156,7 @@ export default Project;
 
 const Projectwrap = styled.div`
     padding: 0 12.5%;
+    margin-bottom: 15vw;
     .title{
         border-bottom: 1px solid #fff;
         margin-bottom: 4vw;
@@ -169,7 +170,13 @@ const Projectwrap = styled.div`
         color: #fff;
         li{
             display: flex;
-            margin-bottom: 8vw;
+            margin-bottom: 5vw;
+            padding: 2.5vw 1.5vw;
+            border-left: 1px solid rgba(255,255,255,0.5);
+            border-right: 1px solid rgba(255,255,255,0.5);
+            border-top: 10px solid rgba(255,255,255,0.5);
+            border-bottom: 1px solid rgba(255,255,255,0.5);
+            border-radius: 10px;
             .photo{
                 margin-right: 50px;
                 width: 50%;
@@ -184,7 +191,7 @@ const Projectwrap = styled.div`
                 font-size: clamp(18px, 2vw, 25px);
                 font-weight: 500;
                 margin-bottom: 1vw;
-                span{
+                .solo_team{
                     margin-left: 1vw;
                     font-size: clamp(10px, 2vw, 17px);
                     font-weight: 400;
@@ -271,6 +278,31 @@ const Projectwrap = styled.div`
             }
         }
     }
+    @media screen and (max-width: 1439px) {
+        .project_list{
+            li{
+                display: block;
+                padding: 4vw;
+                border-radius: 10px;
+                .photo{
+                    width: 100%;
+                    margin-bottom: 2vw;
+                }
+                .txt{
+                    width: 100%;
+                }
+                .p_title{
+                    font-size: clamp(23px, 2vw, 25px);
+                    margin-bottom: 1.5vw;
+                }
+                .deploy_link, .reposi{
+                    .txt, .link{
+                        font-size: clamp(15px, 1.5vw, 20px);
+                    }
+                }
+            }
+        }
+    }
     @media screen and (max-width: 1023px) {
         padding: 0 20px;
         .project_list{
@@ -288,20 +320,23 @@ const Projectwrap = styled.div`
             padding-top: 3vw;
             li{
                 position: relative;
+                display: flex;
                 padding: 2vw;
                 padding-bottom: 24vw;
-                border-left: 10px solid rgba(255,255,255,0.5);
-                border-right: 10px solid rgba(255,255,255,0.5);
-                border-top: 1px solid rgba(255,255,255,0.5);
-                border-bottom: 1px solid rgba(255,255,255,0.5);
-                border-radius: 10px;
                 .photo{
                     margin-right: 25px;
                 }
                 .p_title{
-                    padding-bottom: 1vw;
+                    display: flex;
+                    flex-direction: column;
                     border-bottom: 1px solid rgba(255,255,255,0.3);
-                    margin-bottom: 1vw;
+                    padding-bottom: 0.5vw;
+                    margin-bottom: 1.5vw;
+                    font-size: clamp(18px, 2vw, 25px);
+                    .solo_team{
+                        margin-left: 0;
+                        margin-top: 1.3vw;
+                    }
                 }
                 .skills{
                     margin-bottom: 1.5vw;
@@ -316,6 +351,7 @@ const Projectwrap = styled.div`
                     position: absolute;
                     top: 28vw;
                     left: 2vw;
+                    padding: 2vw;
                 }
                 .deploy_link{
                     margin-bottom: 0.8vw;
@@ -324,21 +360,25 @@ const Projectwrap = styled.div`
                     .txt{
                         width: 17%;
                         padding: 1px 5px 2px 5px;
+                        font-size: clamp(10px, 1.5vw, 18px);
+                    }
+                    .link{
+                        font-size: clamp(10px, 1.5vw, 18px);
                     }
                 }
-                &::after{
-                    content: "";
-                    position: absolute;
-                    bottom: -8vw;
-                    left: 50%;
-                    display: block;
-                    width: 2px;
-                    height: 8vw;
-                    background-color: rgba(255,255,255,0.3);
-                }
-                &:last-child::after{
-                    display:none;
-                }
+                // &::after{
+                //     content: "";
+                //     position: absolute;
+                //     bottom: -9.3vw;
+                //     left: 50%;
+                //     display: block;
+                //     width: 2px;
+                //     height: 8vw;
+                //     background-color: rgba(255,255,255,0.3);
+                // }
+                // &:last-child::after{
+                //     display:none;
+                // }
                 // &::before{
                 //     content: "";
                 //     position: absolute;
@@ -358,6 +398,65 @@ const Projectwrap = styled.div`
                 font-size: 3.5vw;
                 line-height: 3.5vw;
                 color: #fff;
+            }
+        }
+    }
+    @media screen and (max-width: 636px) {
+        .project_list{
+            li{
+                padding-bottom: 47vw;
+                .skills{
+                    border-bottom: none;
+                }
+                .deploy_link, .reposi{
+                    position: absolute;
+                    left: 2vw;
+                }
+                .deploy_link{
+                    top: 60vw;
+                    right: 0;
+                }
+                .reposi{
+                    top: 65vw;
+                    right: 0;
+                }
+            }
+        }
+    }
+    @media screen and (max-width: 500px) {
+        .project_list{
+            li{
+                padding-bottom: 80vw;
+                .skills{
+                    position: absolute;
+                    left: 2vw;
+                    top: 26.5vw;
+                    p{
+                        font-size: clamp(9px, 1.5vw, 18px);
+                    }
+                }
+                .todo_list{
+                    top: 35vw;
+                    p{
+                        font-size: clamp(11px, 2vw, 20px);
+                        margin-bottom: 1.5vw;
+                    }
+                }
+                // &::after{
+                //     bottom: -10.7vw;
+                // }
+                .deploy_link, .reposi{
+                    position: absolute;
+                    left: 2vw;
+                }
+                .deploy_link{
+                    top: 85vw;
+                    right: 0;
+                }
+                .reposi{
+                    top: 93vw;
+                    right: 0;
+                }
             }
         }
     }

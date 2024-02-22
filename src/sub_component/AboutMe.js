@@ -59,7 +59,7 @@ const AboutMeWrap = styled.div`
             border: 1px solid #fff;
             border-radius: 50%;
             overflow: hidden;
-            margin-right: 40px;
+            margin-right: 5vw;
             img{
                 width: 100%;
             }
@@ -89,6 +89,10 @@ const AboutMeWrap = styled.div`
             font-size: clamp(12px, 1.5vw, 23px);
             line-height: 1.6em;
             margin-bottom: 20px;
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.7);
+            border-radius: 20px;
+            padding: 10px;
         }
         .career{
             font-size: clamp(12px, 1.5vw, 22px);
@@ -141,9 +145,6 @@ const AboutMeWrap = styled.div`
                 font-size: clamp(13px, 2.5vw, 18px);
                 text-align: center;
                 margin-bottom: 30px;
-                border: 1px solid rgba(255,255,255,0.7);
-                border-radius: 20px;
-                padding: 10px;
             }
             .career{
                 font-size: clamp(13px, 2.5vw, 18px);
