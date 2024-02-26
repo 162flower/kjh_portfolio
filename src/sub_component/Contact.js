@@ -1,3 +1,4 @@
+import CopyToClipboard from "react-copy-to-clipboard";
 import styled from "styled-components";
 
 const Contact = () => {
@@ -10,9 +11,16 @@ const Contact = () => {
             <div className="contents">
                 <p className="email">
                     <span className="txt">Email.</span>
-                    <span>162flower@naver.com</span>
+                    <CopyToClipboard className="emailCopy" text="162flower@naver.com" onCopy={()=> alert("클립보드에 복사되었습니다.")}>
+                        <span>162flower@naver.com</span>
+                    </CopyToClipboard>
                 </p>
-                <p className="github"><span className="txt">GitHub.</span><span>github.com/162flower</span></p>
+                <p className="github">
+                    <span className="txt">GitHub.</span>
+                    <CopyToClipboard className="githubeCopy" text="github.com/162flower" onCopy={()=> alert("클립보드에 복사되었습니다.")}>
+                        <span>github.com/162flower</span>
+                    </CopyToClipboard>
+                </p>
             </div>
         </ContactWrap>
     )
@@ -28,6 +36,7 @@ const ContactWrap = styled.div`
     .title{
         border-bottom: 1px solid #fff;
         margin-bottom: 3vw;
+        pointer-events : none;
         h2{
             font-size: clamp(28px, 3vw, 40px);
             line-height: 3vw;
@@ -49,6 +58,7 @@ const ContactWrap = styled.div`
             background-size: 3vw;
             background-repeat: no-repeat;
             background-position: 0 center;
+            pointer-events : none;
         }
         .email{
             margin-bottom: 1.5vw;
@@ -60,6 +70,9 @@ const ContactWrap = styled.div`
             background-image: url(./assets/icon_github_wh.png);
             background-size: 2.5vw;
             background-position: 0.1vw center;
+        }
+        .githubeCopy, .emailCopy{
+            cursor: pointer;
         }
     }
     @media screen and (max-width: 1023px) {

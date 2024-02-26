@@ -29,6 +29,9 @@ const HomeWrap = styled.div`
     font-weight: 700;
     line-height: 6vw;
     box-sizing: border-box;
+    .txt{
+        pointer-events : none;
+    }
     // background-color: beige;
     .egg_click{
         position: relative;

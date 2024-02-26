@@ -108,6 +108,7 @@ export default Skills;
 const SkillsWrap = styled.div`
     padding: 0 12.5%;
     padding-top: 10vw;
+    pointer-events : none;
     .title{
         border-bottom: 1px solid #fff;
         margin-bottom: 3vw;

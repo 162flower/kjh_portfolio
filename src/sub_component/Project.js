@@ -176,6 +176,7 @@ const Projectwrap = styled.div`
     .title{
         border-bottom: 1px solid #fff;
         margin-bottom: 4vw;
+        pointer-events : none;
         h2{
             font-size: clamp(28px, 3vw, 40px);
             line-height: 3vw;
@@ -208,6 +209,7 @@ const Projectwrap = styled.div`
                 font-size: clamp(18px, 2vw, 25px);
                 font-weight: 500;
                 margin-bottom: 1vw;
+                pointer-events : none;
                 .solo_team{
                     margin-left: 1vw;
                     font-size: clamp(10px, 2vw, 17px);
@@ -218,6 +220,7 @@ const Projectwrap = styled.div`
                 display: flex;
                 flex-wrap: wrap;
                 margin-bottom: 15px;
+                pointer-events : none;
                 p{
                     margin-right: 0.5vw;
                     margin-bottom: 1vw;
@@ -259,6 +262,7 @@ const Projectwrap = styled.div`
             .todo_list{
                 padding-left: 1vw;
                 margin-bottom: 2vw;
+                pointer-events : none;
                 p{
                     position: relative;
                     font-size: clamp(13px, 2vw, 20px);
@@ -290,6 +294,7 @@ const Projectwrap = styled.div`
                     background-color: #fff;
                     padding: 1vw 1.5vw;
                     border-radius: 10px;
+                    pointer-events : none;
                 }
                 .link{
                     flex-basis: 83%;
