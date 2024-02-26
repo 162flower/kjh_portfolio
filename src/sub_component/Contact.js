@@ -3,7 +3,7 @@ import styled from "styled-components";
 const Contact = () => {
 
     return (
-        <ContactWrap>
+        <ContactWrap id="contact">
             <div className="title">
                 <h2>CONTACT</h2>
             </div>
@@ -23,6 +23,7 @@ export default Contact;
 const ContactWrap = styled.div`
     padding: 0 12.5%;
     margin-bottom: 15vw;
+    padding-top: 10vw;
     color: #fff;
     .title{
         border-bottom: 1px solid #fff;
@@ -63,6 +64,7 @@ const ContactWrap = styled.div`
     }
     @media screen and (max-width: 1023px) {
         padding: 0 20px;
+        padding-top: 15vw;
     }
     @media screen and (max-width: 767px) {
         .title{

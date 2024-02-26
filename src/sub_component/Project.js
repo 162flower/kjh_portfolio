@@ -121,7 +121,7 @@ const Project = () => {
     ];
 
     return (
-        <Projectwrap>
+        <Projectwrap id="project">
             <div className="title">
                 <h2>PROJECT</h2>
             </div>
@@ -172,7 +172,7 @@ export default Project;
 
 const Projectwrap = styled.div`
     padding: 0 12.5%;
-    margin-bottom: 15vw;
+    padding-top: 10vw;
     .title{
         border-bottom: 1px solid #fff;
         margin-bottom: 4vw;
@@ -194,11 +194,11 @@ const Projectwrap = styled.div`
             border-bottom: 1px solid rgba(255,255,255,0.5);
             border-radius: 10px;
             .photo{
-                border: 1px solid rgba(255,255,255,0.5);
                 margin-right: 50px;
                 width: 50%;
                 img{
                     width: 100%;
+                    border: 1px solid rgba(255,255,255,0.5);
                 }
             }
             .txt{
@@ -244,16 +244,16 @@ const Projectwrap = styled.div`
                     background-image: url(./assets/icon_jquery.png);
                 }
                 .PhotoShop{
-                    background-image: url(./assets/icon_PhotoShop.png);
+                    background-image: url(./assets/icon_photoshop.png);
                 }
                 .Figma{
-                    background-image: url(./assets/icon_Figma.png);
+                    background-image: url(./assets/icon_figma.png);
                 }
                 .JavaScript{
-                    background-image: url(./assets/icon_JavaScript.png);
+                    background-image: url(./assets/icon_javascript.png);
                 }
                 .React{
-                    background-image: url(./assets/icon_React.png);
+                    background-image: url(./assets/icon_react.png);
                 }
             }
             .todo_list{
@@ -330,6 +330,7 @@ const Projectwrap = styled.div`
     }
     @media screen and (max-width: 1023px) {
         padding: 0 20px;
+        padding-top: 15vw;
         .project_list{
             li{
                 .skills{

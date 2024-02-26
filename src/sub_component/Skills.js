@@ -77,7 +77,7 @@ const Skills = () => {
     ];
 
     return (
-        <SkillsWrap>
+        <SkillsWrap id="skills">
             <div className="title">
                 <h2>SKILLS</h2>
             </div>
@@ -107,7 +107,7 @@ export default Skills;
 
 const SkillsWrap = styled.div`
     padding: 0 12.5%;
-    margin-bottom: 15vw;
+    padding-top: 10vw;
     .title{
         border-bottom: 1px solid #fff;
         margin-bottom: 3vw;
@@ -124,6 +124,7 @@ const SkillsWrap = styled.div`
         }
         color: #fff;
         li{
+            flex-grow: 1;
             width: 12%;
             padding: 20px 5px;
             box-sizing: border-box;
@@ -163,6 +164,7 @@ const SkillsWrap = styled.div`
     }
     @media screen and (max-width: 1023px) {
         padding: 0 20px;
+        padding-top: 15vw;
     }
     @media screen and (max-width: 767px) {
         .title{

@@ -3,7 +3,7 @@ import styled from "styled-components";
 const Home = () => {
 
     return (
-        <HomeWrap>
+        <HomeWrap id="home">
             <div className="txt">
                 안녕하세요.<br />
                 프론트엔드 신입 개발자<br />
@@ -24,7 +24,6 @@ const HomeWrap = styled.div`
     padding-top: 15vw;
     height: 45vw;
     min-height: 200px;
-    margin-bottom: 50px;
     color : #fff;
     font-size: 4vw;
     font-weight: 700;
