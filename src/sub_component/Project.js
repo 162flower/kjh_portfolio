@@ -4,36 +4,37 @@ const Project = () => {
     const projectList = [
         {
             id: 0,
-            title: '로마네',
-            en_title: 'romane',
-            solo_team: 'Solo',
-            web: 'PC',
-            photo: './assets/projectPhoto_romane.png',
-            skills: ['HTML', 'CSS', 'JQuery', 'PhotoShop'],
+            title: '트리플',
+            en_title: 'triple',
+            solo_team: 'Team',
+            web: '모바일',
+            photo: './assets/projectPhoto_triple.png',
+            skills: ['React', 'CSS', 'Figma'],
             todoList: [
-                '프론트엔드 첫 프로젝트',
-                '포토샵으로 와이어프레임 및 시안을 디자인하였고, 이를 통하여시각적으로 코드를 구조화해 볼 수 있었음',
-                '기존의 로마네 웹사이트와 경쟁사이트를 분석하여 재구성함',
-                'slick slider 라이브러리를 사용하여 슬라이드를 구현하였음'
+                'Figma로 와이어프레임 및 시안을 팀원과 함께 작업하였음',
+                '헤더영역, 버튼영역, 푸터영역의 공통적으로 사용되는 컴포넌트를 작업함 ',
+                '마이페이지를 작업하였으며, 3개의 탭으로 나누어 더미데이터를 필터링하여 목록이 구성되도록 하였고, 목록에서 삭제하는 기능을 구현함',
+                '일정짜기 페이지의 메모추가버튼 클릭시 모달창이 띄어지며 메모를 입력하여 저장할 수 있도록 구현함',
+                '여행기, 지난여행, 매거진의 상세페이지를 제작함'
             ],
-            deploymentLink: 'http://',
-            repository: 'http://'
+            deploymentLink: 'https://team-c-triple.firebaseapp.com',
+            repository: 'https://github.com/TeamC-Triple/team-c-triple.git'
         },
         {
             id: 1,
-            title: '울산관광웹사이트',
-            en_title: 'ulsanTrip',
+            title: 'Movie List',
+            en_title: 'MovieList',
             solo_team: 'Solo',
-            web: 'PC',
-            photo: './assets/projectPhoto_ulsanTrip.png',
-            skills: ['HTML', 'CSS', 'JQuery', 'Figma'],
+            web: '반응형',
+            photo: './assets/projectPhoto_movielist.png',
+            skills: ['React', 'CSS', 'Figma'],
             todoList: [
-                '피그마로 와이어프레임 및 시안을 디자인하였고, 이를 통하여시각적으로 코드를 구조화해 볼 수 있었음',
-                '기존의 울산관광웹사이트와 경쟁사이트를 분석하여 재구성함',
-                'slick slider 라이브러리를 사용하여 슬라이드를 구현하였음'
+                '더미데이터를 json 형식으로 작성하여 변수로 선언하여 사이트 내용 구성함',
+                '연도별 탭을 구성하여 더미데이터를 필터링하여 연도별 영화목록을 구성함',
+                '영화의 포스터 목록에 마우스를 호버하였을때 상세보기 버튼이 나타나고, 이를 클릭하였을때 상세페이지가 모달창으로 띄어지도록 하였으며 닫기 버튼도 구현함'
             ],
-            deploymentLink: 'http://',
-            repository: 'http://'
+            deploymentLink: 'https://kjh-movielist-project.web.app',
+            repository: 'https://github.com/162flower/kjh_movieList_project.git'
         },
         {
             id: 2,
@@ -48,8 +49,8 @@ const Project = () => {
                 '기존의 울산책방 사이트와 경쟁사이트를 분석하여 재구성함',
                 'JavaScript로 상세검색 페이지를 구현함'
             ],
-            deploymentLink: 'http://',
-            repository: 'http://'
+            deploymentLink: 'https://kjh-wjbook-project.netlify.app',
+            repository: 'https://github.com/162flower/kjh_wjBook_project.git'
         },
         {
             id: 3,
@@ -64,44 +65,59 @@ const Project = () => {
                 '기존의 넥슨 사이트와 경쟁사이트를 분석하여 재구성함',
                 'slick slider 라이브러리를 사용하여 슬라이드를 구현하였음'
             ],
-            deploymentLink: 'http://',
-            repository: 'http://'
+            deploymentLink: 'https://kjh-nexon-project.netlify.app',
+            repository: 'https://github.com/162flower/kjh_nexon_project.git'
         },
         {
             id: 4,
-            title: 'Movie List',
-            en_title: 'MovieList',
+            title: '울산관광웹사이트',
+            en_title: 'ulsanTrip',
             solo_team: 'Solo',
-            web: '반응형',
-            photo: './assets/projectPhoto_movielist.png',
-            skills: ['React', 'CSS', 'Figma'],
+            web: 'PC',
+            photo: './assets/projectPhoto_ulsanTrip.png',
+            skills: ['HTML', 'CSS', 'JQuery', 'Figma'],
             todoList: [
-                '더미데이터를 json 형식으로 작성하여 변수로 선언하여 사이트 내용 구성함',
-                '연도별 탭을 구성하여 더미데이터를 필터링하여 연도별 영화목록을 구성함',
-                '영화의 포스터 목록에 마우스를 호버하였을때 상세보기 버튼이 나타나고, 이를 클릭하였을때 상세페이지가 모달창으로 띄어지도록 하였으며 닫기 버튼도 구현함'
+                '피그마로 와이어프레임 및 시안을 디자인하였고, 이를 통하여시각적으로 코드를 구조화해 볼 수 있었음',
+                '기존의 울산관광웹사이트와 경쟁사이트를 분석하여 재구성함',
+                'slick slider 라이브러리를 사용하여 슬라이드를 구현하였음'
             ],
-            deploymentLink: 'http://',
-            repository: 'http://'
+            deploymentLink: 'https://kjh-ulsantrip-project.netlify.app',
+            repository: 'https://github.com/162flower/kjh_ulsanTrip_project.git'
         },
         {
             id: 5,
-            title: '트리플',
-            en_title: 'triple',
-            solo_team: 'Team',
-            web: '모바일',
-            photo: './assets/projectPhoto_triple.png',
+            title: '로마네',
+            en_title: 'romane',
+            solo_team: 'Solo',
+            web: 'PC',
+            photo: './assets/projectPhoto_romane.png',
+            skills: ['HTML', 'CSS', 'JQuery', 'PhotoShop'],
+            todoList: [
+                '프론트엔드 첫 프로젝트',
+                '포토샵으로 와이어프레임 및 시안을 디자인하였고, 이를 통하여시각적으로 코드를 구조화해 볼 수 있었음',
+                '기존의 로마네 웹사이트와 경쟁사이트를 분석하여 재구성함',
+                'slick slider 라이브러리를 사용하여 슬라이드를 구현하였음'
+            ],
+            deploymentLink: 'https://kjh-romane-project.netlify.app',
+            repository: 'https://github.com/162flower/kjh_romane_project.git'
+        },
+        {
+            id: 6,
+            title: '포트폴리오 사이트',
+            en_title: 'portfolio',
+            solo_team: 'Solo',
+            web: '반응형',
+            photo: './assets/projectPhoto_portfolio.png',
             skills: ['React', 'CSS', 'Figma'],
             todoList: [
-                'Figma로 와이어프레임 및 시안을 팀원과 함께 작업하였음',
-                '헤더영역, 버튼영역, 푸터영역의 공통적으로 사용되는 컴포넌트를 작업함 ',
-                '마이페이지를 작업하였으며, 3개의 탭으로 나누어 더미데이터를 필터링하여 목록이 구성되도록 하였고, 목록에서 삭제하는 기능을 구현함',
-                '일정짜기 페이지의 메모추가버튼 클릭시 모달창이 띄어지며 메모를 입력하여 저장할 수 있도록 구현함',
-                '여행기, 지난여행, 매거진의 상세페이지를 제작함'
+                '포트폴리오를 위한 사이트임',
+                '피그마으로 와이어프레임 및 시안을 디자인함',
+                '앞으로 개발자로서 무궁무진하게 성장하고 발전해나갈 나를 클릭 이벤트를 통하여 알을 깨고 나오는 생명체로  표현하였음',
+                '알에서 완전히 깨고나오지 않는 것은 앞으로 다양하게 성장할 것을 의미함'
             ],
-            deploymentLink: 'http://',
-            repository: 'http://'
+            deploymentLink: 'https://kjh-portfolio-aab42.web.app',
+            repository: 'https://github.com/162flower/kjh_portfolio.git'
         },
-
     ];
 
     return (
@@ -137,11 +153,11 @@ const Project = () => {
                                 </div>
                                 <div className="deploy_link">
                                     <p className="txt">배포링크</p>
-                                    <p className="link">{item.deploymentLink}</p>
+                                    <p className="link"><a href={item.deploymentLink} target="_blank" rel="noopener noreferrer">{item.deploymentLink}</a></p>
                                 </div>
                                 <div className="reposi">
                                     <p className="txt">레포지토리</p>
-                                    <p className="link">{item.repository}</p>
+                                    <p className="link"><a href={item.repository} target="_blank" rel="noopener noreferrer">{item.repository}</a></p>
                                 </div>
                             </div>
                         </li>
@@ -178,6 +194,7 @@ const Projectwrap = styled.div`
             border-bottom: 1px solid rgba(255,255,255,0.5);
             border-radius: 10px;
             .photo{
+                border: 1px solid rgba(255,255,255,0.5);
                 margin-right: 50px;
                 width: 50%;
                 img{
@@ -256,24 +273,32 @@ const Projectwrap = styled.div`
                 } 
             }
             .deploy_link{
-                margin-bottom: 0.5vw;
+                margin-bottom: 1vw;
             }
             .deploy_link, .reposi{
                 display: flex;
                 align-items: center;
+                overflow-wrap: anywhere;
                 .txt{
-                    width: 17%;
+                    flex-basis: 17%;
+                    flex-shrink:0;
                     text-align: center;
-                    margin-right: 1vw;
+                    margin-right: 1.5vw;
                     font-size: clamp(10px, 1.5vw, 18px);
                     font-weight: 700;
                     color: #000;
                     background-color: #fff;
-                    padding: 10px 15px 12px 15px;
+                    padding: 1vw 1.5vw;
                     border-radius: 10px;
                 }
                 .link{
+                    flex-basis: 83%;
+                }
+                .link>a{
+                    display: block;
                     font-size: clamp(10px, 1.5vw, 18px);
+                    line-height: 1em;
+                    color: #fff;
                 }
             }
         }
@@ -292,12 +317,12 @@ const Projectwrap = styled.div`
                     width: 100%;
                 }
                 .p_title{
-                    font-size: clamp(23px, 2vw, 25px);
+                    font-size: clamp(22px, 2vw, 25px);
                     margin-bottom: 1.5vw;
                 }
                 .deploy_link, .reposi{
                     .txt, .link{
-                        font-size: clamp(15px, 1.5vw, 20px);
+                        font-size: clamp(10px, 1.5vw, 20px);
                     }
                 }
             }
@@ -315,83 +340,96 @@ const Projectwrap = styled.div`
             }
         }
     }
+
     @media screen and (max-width: 768px) {
         .project_list{
-            padding-top: 3vw;
             li{
-                position: relative;
-                display: flex;
-                padding: 2vw;
-                padding-bottom: 24vw;
-                .photo{
-                    margin-right: 25px;
-                }
                 .p_title{
-                    display: flex;
-                    flex-direction: column;
-                    border-bottom: 1px solid rgba(255,255,255,0.3);
-                    padding-bottom: 0.5vw;
-                    margin-bottom: 1.5vw;
-                    font-size: clamp(18px, 2vw, 25px);
-                    .solo_team{
-                        margin-left: 0;
-                        margin-top: 1.3vw;
-                    }
+                    font-size: clamp(14px, 2.8vw, 25px);
                 }
-                .skills{
-                    margin-bottom: 1.5vw;
-                    border-bottom: 1px solid rgba(255,255,255,0.3);
-                    p{
-                        padding: 1px 15px 3px 32px;
-                        background-size: 19px;
-                        background-position: 7px 3px;
-                    }
+                .solo_team{
+                    font-size: clamp(10px, 1.2vw, 14px);
                 }
-                .todo_list{
-                    position: absolute;
-                    top: 28vw;
-                    left: 2vw;
-                    padding: 2vw;
-                }
-                .deploy_link{
-                    margin-bottom: 0.8vw;
-                }
-                .deploy_link, .reposi{
-                    .txt{
-                        width: 17%;
-                        padding: 1px 5px 2px 5px;
-                        font-size: clamp(10px, 1.5vw, 18px);
-                    }
-                    .link{
-                        font-size: clamp(10px, 1.5vw, 18px);
-                    }
-                }
-                // &::after{
-                //     content: "";
-                //     position: absolute;
-                //     bottom: -9.3vw;
-                //     left: 50%;
-                //     display: block;
-                //     width: 2px;
-                //     height: 8vw;
-                //     background-color: rgba(255,255,255,0.3);
-                // }
-                // &:last-child::after{
-                //     display:none;
-                // }
-                // &::before{
-                //     content: "";
-                //     position: absolute;
-                //     bottom: -8vw;
-                //     right: 15%;
-                //     display: block;
-                //     width: 2px;
-                //     height: 8vw;
-                //     background-color: rgba(255,255,255,0.3);
-                // }
             }
         }
     }
+    // @media screen and (max-width: 768px) {
+    //     .project_list{
+    //         padding-top: 3vw;
+    //         li{
+    //             position: relative;
+    //             display: flex;
+    //             padding: 2vw;
+    //             padding-bottom: 24vw;
+    //             .photo{
+    //                 margin-right: 25px;
+    //             }
+    //             .p_title{
+    //                 display: flex;
+    //                 flex-direction: column;
+    //                 border-bottom: 1px solid rgba(255,255,255,0.3);
+    //                 padding-bottom: 0.5vw;
+    //                 margin-bottom: 1.5vw;
+    //                 font-size: clamp(18px, 2vw, 25px);
+    //                 .solo_team{
+    //                     margin-left: 0;
+    //                     margin-top: 1.3vw;
+    //                 }
+    //             }
+    //             .skills{
+    //                 margin-bottom: 1.5vw;
+    //                 border-bottom: 1px solid rgba(255,255,255,0.3);
+    //                 p{
+    //                     padding: 1px 15px 3px 32px;
+    //                     background-size: 19px;
+    //                     background-position: 7px 3px;
+    //                 }
+    //             }
+    //             .todo_list{
+    //                 position: absolute;
+    //                 top: 28vw;
+    //                 left: 2vw;
+    //                 padding: 2vw;
+    //             }
+    //             .deploy_link{
+    //                 margin-bottom: 0.8vw;
+    //             }
+    //             .deploy_link, .reposi{
+    //                 .txt{
+    //                     width: 17%;
+    //                     padding: 1px 5px 2px 5px;
+    //                     font-size: clamp(10px, 1.5vw, 18px);
+    //                 }
+    //                 .link{
+    //                     font-size: clamp(10px, 1.5vw, 18px);
+    //                 }
+    //             }
+    //             // &::after{
+    //             //     content: "";
+    //             //     position: absolute;
+    //             //     bottom: -9.3vw;
+    //             //     left: 50%;
+    //             //     display: block;
+    //             //     width: 2px;
+    //             //     height: 8vw;
+    //             //     background-color: rgba(255,255,255,0.3);
+    //             // }
+    //             // &:last-child::after{
+    //             //     display:none;
+    //             // }
+    //             // &::before{
+    //             //     content: "";
+    //             //     position: absolute;
+    //             //     bottom: -8vw;
+    //             //     right: 15%;
+    //             //     display: block;
+    //             //     width: 2px;
+    //             //     height: 8vw;
+    //             //     background-color: rgba(255,255,255,0.3);
+    //             // }
+    //         }
+    //     }
+    // }
     @media screen and (max-width: 767px) {
         .title{
             h2{
@@ -401,63 +439,63 @@ const Projectwrap = styled.div`
             }
         }
     }
-    @media screen and (max-width: 636px) {
-        .project_list{
-            li{
-                padding-bottom: 47vw;
-                .skills{
-                    border-bottom: none;
-                }
-                .deploy_link, .reposi{
-                    position: absolute;
-                    left: 2vw;
-                }
-                .deploy_link{
-                    top: 60vw;
-                    right: 0;
-                }
-                .reposi{
-                    top: 65vw;
-                    right: 0;
-                }
-            }
-        }
-    }
-    @media screen and (max-width: 500px) {
-        .project_list{
-            li{
-                padding-bottom: 80vw;
-                .skills{
-                    position: absolute;
-                    left: 2vw;
-                    top: 26.5vw;
-                    p{
-                        font-size: clamp(9px, 1.5vw, 18px);
-                    }
-                }
-                .todo_list{
-                    top: 35vw;
-                    p{
-                        font-size: clamp(11px, 2vw, 20px);
-                        margin-bottom: 1.5vw;
-                    }
-                }
-                // &::after{
-                //     bottom: -10.7vw;
-                // }
-                .deploy_link, .reposi{
-                    position: absolute;
-                    left: 2vw;
-                }
-                .deploy_link{
-                    top: 85vw;
-                    right: 0;
-                }
-                .reposi{
-                    top: 93vw;
-                    right: 0;
-                }
-            }
-        }
+    // @media screen and (max-width: 636px) {
+    //     .project_list{
+    //         li{
+    //             padding-bottom: 47vw;
+    //             .skills{
+    //                 border-bottom: none;
+    //             }
+    //             .deploy_link, .reposi{
+    //                 position: absolute;
+    //                 left: 2vw;
+    //             }
+    //             .deploy_link{
+    //                 top: 60vw;
+    //                 right: 0;
+    //             }
+    //             .reposi{
+    //                 top: 65vw;
+    //                 right: 0;
+    //             }
+    //         }
+    //     }
+    // }
+    // @media screen and (max-width: 500px) {
+    //     .project_list{
+    //         li{
+    //             padding-bottom: 80vw;
+    //             .skills{
+    //                 position: absolute;
+    //                 left: 2vw;
+    //                 top: 26.5vw;
+    //                 p{
+    //                     font-size: clamp(9px, 1.5vw, 18px);
+    //                 }
+    //             }
+    //             .todo_list{
+    //                 top: 35vw;
+    //                 p{
+    //                     font-size: clamp(11px, 2vw, 20px);
+    //                     margin-bottom: 1.5vw;
+    //                 }
+    //             }
+    //             // &::after{
+    //             //     bottom: -10.7vw;
+    //             // }
+    //             .deploy_link, .reposi{
+    //                 position: absolute;
+    //                 left: 2vw;
+    //             }
+    //             .deploy_link{
+    //                 top: 85vw;
+    //                 right: 0;
+    //             }
+    //             .reposi{
+    //                 top: 93vw;
+    //                 right: 0;
+    //             }
+    //         }
+    //     }
     }
 `

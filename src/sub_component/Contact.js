@@ -12,7 +12,7 @@ const Contact = () => {
                     <span className="txt">Email.</span>
                     <span>162flower@naver.com</span>
                 </p>
-                <p className="github"><span className="txt">GitHub.</span><sapn>github.com/162flower</sapn></p>
+                <p className="github"><span className="txt">GitHub.</span><span>github.com/162flower</span></p>
             </div>
         </ContactWrap>
     )
@@ -57,6 +57,8 @@ const ContactWrap = styled.div`
         }
         .github span.txt{
             background-image: url(./assets/icon_github_wh.png);
+            background-size: 2.5vw;
+            background-position: 0.1vw center;
         }
     }
     @media screen and (max-width: 1023px) {
