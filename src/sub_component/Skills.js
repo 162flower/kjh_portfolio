@@ -170,7 +170,7 @@ const SkillsWrap = styled.div`
     @media screen and (max-width: 767px) {
         .title{
             h2{
-                font-size: 3.5vw;
+                font-size: clamp(18px, 3.5vw, 20px);
                 line-height: 3.5vw;
                 color: #fff;
             }
@@ -197,5 +197,8 @@ const SkillsWrap = styled.div`
                 width: 74%;
             }
         }
+    }
+    @media screen and (max-width: 500px){
+        padding-top: 20vw;
     }
 `

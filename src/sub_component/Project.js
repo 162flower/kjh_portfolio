@@ -1,3 +1,4 @@
+import { useState } from "react";
 import styled from "styled-components";
 
 const Project = () => {
@@ -120,48 +121,107 @@ const Project = () => {
         },
     ];
 
+    const [category, setCategory] = useState('cateAll');
+    const [selectCate, setSelectCate] = useState('cateAll');
+
+    const clickBtn = (cateName) => {
+        setSelectCate(cateName);
+        setCategory(cateName);
+    };
+
+    const filterDummy = category === 'cateAll'
+        ? projectList : projectList.filter((it) => (it.skills.find((it) => it === category)));
+
     return (
         <Projectwrap id="project">
             <div className="title">
                 <h2>PROJECT</h2>
+                <ProjectCate>
+                    <ul>
+                        <li
+                            onClick={() => clickBtn('cateAll')}
+                            className={selectCate === 'cateAll' ? 'active' : ''}
+                        >
+                            전체
+                        </li>
+                        <li
+                            onClick={() => clickBtn('HTML')}
+                            className={selectCate === 'HTML' ? 'active' : ''}
+                        >
+                            HTML
+                        </li>
+                        <li
+                            onClick={() => clickBtn('CSS')}
+                            className={selectCate === 'CSS' ? 'active' : ''}
+                        >
+                            CSS
+                        </li>
+                        <li
+                            onClick={() => clickBtn('JavaScript')}
+                            className={selectCate === 'JavaScript' ? 'active' : ''}
+                        >
+                            JavaScript
+                        </li>
+                        <li
+                            onClick={() => clickBtn('JQuery')}
+                            className={selectCate === 'JQuery' ? 'active' : ''}
+                        >
+                            JQuery
+                        </li>
+                        <li
+                            onClick={() => clickBtn('React')}
+                            className={selectCate === 'React' ? 'active' : ''}
+                        >
+                            React
+                        </li>
+                        <li
+                            onClick={() => clickBtn('TypeScript')}
+                            className={selectCate === 'TypeScript' ? 'active' : ''}
+                        >
+                            TypeScript
+                        </li>
+                    </ul>
+                </ProjectCate>
             </div>
             <div className="project_list">
                 <ul>
-                    {projectList.map((item) =>
-                        <li key={item.id} className={item.en_title}>
-                            <div className="photo">
-                                <img src={item.photo} />
-                            </div>
-                            <div className="txt">
-                                <p className="p_title">
-                                    <span className="tit">{item.title}</span>
-                                    <span className="solo_team">{item.solo_team} Project / {item.web}웹</span>
-                                </p>
-                                <div className="skills">
-                                    {item.skills.map((it, idx) =>
-                                        <p key={idx} className={it}>
-                                            {it}
+                    {
+                        filterDummy.length === 0 ? <li className="noList"><div className="noList_photo"><img src="assets/noList_img.png" alt="업데이트 예정입니다." /></div><p className="noList_txt">업데이트 예정입니다.</p></li>
+                            : filterDummy.map((item) =>
+                                <li key={item.id} className={item.en_title}>
+                                    <div className="photo">
+                                        <img src={item.photo} alt={item.title} />
+                                    </div>
+                                    <div className="txt">
+                                        <p className="p_title">
+                                            <span className="tit">{item.title}</span>
+                                            <span className="solo_team">{item.solo_team} Project / {item.web}웹</span>
                                         </p>
-                                    )}
-                                </div>
-                                <div className="todo_list">
-                                    {item.todoList.map((it, idx) =>
-                                        <p key={idx}>
-                                            {it}
-                                        </p>
-                                    )}
-                                </div>
-                                <div className="deploy_link">
-                                    <p className="txt">배포링크</p>
-                                    <p className="link"><a href={item.deploymentLink} target="_blank" rel="noopener noreferrer">{item.deploymentLink}</a></p>
-                                </div>
-                                <div className="reposi">
-                                    <p className="txt">레포지토리</p>
-                                    <p className="link"><a href={item.repository} target="_blank" rel="noopener noreferrer">{item.repository}</a></p>
-                                </div>
-                            </div>
-                        </li>
-                    )}
+                                        <div className="skills">
+                                            {item.skills.map((it, idx) =>
+                                                <p key={idx} className={it}>
+                                                    {it}
+                                                </p>
+                                            )}
+                                        </div>
+                                        <div className="todo_list">
+                                            {item.todoList.map((it, idx) =>
+                                                <p key={idx}>
+                                                    {it}
+                                                </p>
+                                            )}
+                                        </div>
+                                        <div className="deploy_link">
+                                            <p className="txt">배포링크</p>
+                                            <p className="link"><a href={item.deploymentLink} target="_blank" rel="noopener noreferrer">{item.deploymentLink}</a></p>
+                                        </div>
+                                        <div className="reposi">
+                                            <p className="txt">레포지토리</p>
+                                            <p className="link"><a href={item.repository} target="_blank" rel="noopener noreferrer">{item.repository}</a></p>
+                                        </div>
+                                    </div>
+                                </li>
+                            )}
                 </ul>
             </div>
         </Projectwrap>
@@ -174,13 +234,16 @@ const Projectwrap = styled.div`
     padding: 0 12.5%;
     padding-top: 10vw;
     .title{
+        position: relative;
+        display: flex;
         border-bottom: 1px solid #fff;
-        margin-bottom: 4vw;
+        margin-bottom: 2vw;
         pointer-events : none;
         h2{
             font-size: clamp(28px, 3vw, 40px);
             line-height: 3vw;
             color: #fff;
+            margin-right: 3vw;
         }
     }
     .project_list{
@@ -194,6 +257,23 @@ const Projectwrap = styled.div`
             border-top: 10px solid rgba(255,255,255,0.5);
             border-bottom: 1px solid rgba(255,255,255,0.5);
             border-radius: 10px;
+            &.noList{
+                display: block;
+                text-align: center;
+                font-size: clamp(10px, 3vw, 18px);
+                padding: 5vw 0 8vw 0;
+                .noList_photo{
+                    width: 10%;
+                    margin: 0 auto;
+                    margin-bottom: 1.5vw;
+                    img{
+                        width: 100%;
+                    }
+                }
+                .noList_txt{
+
+                }
+            }
             .photo{
                 margin-right: 50px;
                 width: 50%;
@@ -348,6 +428,9 @@ const Projectwrap = styled.div`
     }
 
     @media screen and (max-width: 768px) {
+        .title{
+            margin-bottom: 12vw;
+        }
         .project_list{
             li{
                 .p_title{
@@ -359,149 +442,55 @@ const Projectwrap = styled.div`
             }
         }
     }
-    // @media screen and (max-width: 768px) {
-    //     .project_list{
-    //         padding-top: 3vw;
-    //         li{
-    //             position: relative;
-    //             display: flex;
-    //             padding: 2vw;
-    //             padding-bottom: 24vw;
-    //             .photo{
-    //                 margin-right: 25px;
-    //             }
-    //             .p_title{
-    //                 display: flex;
-    //                 flex-direction: column;
-    //                 border-bottom: 1px solid rgba(255,255,255,0.3);
-    //                 padding-bottom: 0.5vw;
-    //                 margin-bottom: 1.5vw;
-    //                 font-size: clamp(18px, 2vw, 25px);
-    //                 .solo_team{
-    //                     margin-left: 0;
-    //                     margin-top: 1.3vw;
-    //                 }
-    //             }
-    //             .skills{
-    //                 margin-bottom: 1.5vw;
-    //                 border-bottom: 1px solid rgba(255,255,255,0.3);
-    //                 p{
-    //                     padding: 1px 15px 3px 32px;
-    //                     background-size: 19px;
-    //                     background-position: 7px 3px;
-    //                 }
-    //             }
-    //             .todo_list{
-    //                 position: absolute;
-    //                 top: 28vw;
-    //                 left: 2vw;
-    //                 padding: 2vw;
-    //             }
-    //             .deploy_link{
-    //                 margin-bottom: 0.8vw;
-    //             }
-    //             .deploy_link, .reposi{
-    //                 .txt{
-    //                     width: 17%;
-    //                     padding: 1px 5px 2px 5px;
-    //                     font-size: clamp(10px, 1.5vw, 18px);
-    //                 }
-    //                 .link{
-    //                     font-size: clamp(10px, 1.5vw, 18px);
-    //                 }
-    //             }
-    //             // &::after{
-    //             //     content: "";
-    //             //     position: absolute;
-    //             //     bottom: -9.3vw;
-    //             //     left: 50%;
-    //             //     display: block;
-    //             //     width: 2px;
-    //             //     height: 8vw;
-    //             //     background-color: rgba(255,255,255,0.3);
-    //             // }
-    //             // &:last-child::after{
-    //             //     display:none;
-    //             // }
-    //             // &::before{
-    //             //     content: "";
-    //             //     position: absolute;
-    //             //     bottom: -8vw;
-    //             //     right: 15%;
-    //             //     display: block;
-    //             //     width: 2px;
-    //             //     height: 8vw;
-    //             //     background-color: rgba(255,255,255,0.3);
-    //             // }
-    //         }
-    //     }
-    // }
+    @media screen and (max-width: 500px){
+        padding-top: 20vw;
+    }
     @media screen and (max-width: 767px) {
         .title{
             h2{
-                font-size: 3.5vw;
+                font-size: clamp(18px, 3.5vw, 20px);
                 line-height: 3.5vw;
                 color: #fff;
             }
         }
     }
-    // @media screen and (max-width: 636px) {
-    //     .project_list{
-    //         li{
-    //             padding-bottom: 47vw;
-    //             .skills{
-    //                 border-bottom: none;
-    //             }
-    //             .deploy_link, .reposi{
-    //                 position: absolute;
-    //                 left: 2vw;
-    //             }
-    //             .deploy_link{
-    //                 top: 60vw;
-    //                 right: 0;
-    //             }
-    //             .reposi{
-    //                 top: 65vw;
-    //                 right: 0;
-    //             }
-    //         }
-    //     }
-    // }
-    // @media screen and (max-width: 500px) {
-    //     .project_list{
-    //         li{
-    //             padding-bottom: 80vw;
-    //             .skills{
-    //                 position: absolute;
-    //                 left: 2vw;
-    //                 top: 26.5vw;
-    //                 p{
-    //                     font-size: clamp(9px, 1.5vw, 18px);
-    //                 }
-    //             }
-    //             .todo_list{
-    //                 top: 35vw;
-    //                 p{
-    //                     font-size: clamp(11px, 2vw, 20px);
-    //                     margin-bottom: 1.5vw;
-    //                 }
-    //             }
-    //             // &::after{
-    //             //     bottom: -10.7vw;
-    //             // }
-    //             .deploy_link, .reposi{
-    //                 position: absolute;
-    //                 left: 2vw;
-    //             }
-    //             .deploy_link{
-    //                 top: 85vw;
-    //                 right: 0;
-    //             }
-    //             .reposi{
-    //                 top: 93vw;
-    //                 right: 0;
-    //             }
-    //         }
-    //     }
+}
+`
+const ProjectCate = styled.div`
+    color: #fff;
+    pointer-events : auto;
+    ul{
+        display: flex;
+        margin-top: 0.3vw;
+        li{
+            padding: 0 1.3vw;
+            font-size: clamp(10px, 2vw, 18px);
+            line-height: 3vw;
+            font-weight: 500;
+            cursor: pointer;
+        }
+        li.active{
+            background-color: #fff;
+            color: #000;
+            border-radius: 10px 10px 0 0;
+        }
+    }
+    @media screen and (max-width: 768px) {
+        position: absolute;
+        top: 6vw;
+        ul{
+            width: calc( 100vw - 40px );
+            flex-shrink: 0;
+            overflow-x: scroll;
+            li{
+                padding: 2.5vw 3vw;
+                line-height: 0.5em;
+                margin-bottom: 2vw;
+                white-space: nowrap;
+            }
+            li.active{
+                border-radius: 50px;
+            }
+        }
     }
 `

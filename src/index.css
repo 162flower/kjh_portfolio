@@ -3,6 +3,7 @@
 *{
     margin: 0;
     padding: 0;
+    /* cursor: url(../public/assets/cursor_normal.png), auto; */
 }
 body{
     font-family: 'Noto Sans KR', sans-serif;

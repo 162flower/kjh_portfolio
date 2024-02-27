@@ -1,7 +1,9 @@
+import { useState } from "react";
 import styled from "styled-components";
 
 const Home = () => {
-
+    const [count, setCount] = useState(8);
+    
     return (
         <HomeWrap id="home">
             <div className="txt">
@@ -9,8 +11,20 @@ const Home = () => {
                 프론트엔드 신입 개발자<br />
                 고주희 입니다.<br />
             </div>
-            <div className="egg_click">
-                <img src="./assets/egg09.png"/>
+            <div className={ count === 1 ? 'egg_click none':'egg_click'} onClick={
+                ()=>{ setCount(count-1)}
+            }>
+                {
+                    count === 1 ?
+                        <div className="egg_photo">
+                            <img src="./assets/egg.gif"/>
+                            <p>Ta-da!</p>
+                        </div>
+                    : <div className="egg_photo">
+                        <img src={`./assets/egg0${count}.png`}/>
+                        <p>Click</p>
+                      </div>
+                }
             </div>
         </HomeWrap>
     );
@@ -32,36 +46,44 @@ const HomeWrap = styled.div`
     .txt{
         pointer-events : none;
     }
-    // background-color: beige;
     .egg_click{
         position: relative;
         position: absolute;
-        top: 10vw;
-        right: 12.5%;
+        top: 15vw;
+        right: 20%;
         cursor: pointer;
+        .egg_photo p{
+            text-align: center;
+            font-size: clamp(14px, 3vw, 50px);
+        }
+        &.none{
+            pointer-events : none;
+        }
     }
     @media screen and (max-width: 1700px){
         .egg_click{
-            top: 9vw;
-            right: 10vw;
-            img{
-                width: 32vw;
-            }
+            right: 15%;
         }
     }
     @media screen and (max-width: 1023px) {
         padding: 0 20px;
-        padding-top: 15vw;
+        padding-top: 20vw;
         margin-bottom: 50vw;
         text-align: center;
         .egg_click{
             position: initial;
-            width: 70%;
+            width: 35%;
             margin: 0 auto;
+            margin-top: 5vw;
             img{
                 width: 100%;
             }
         }
     }
-
+    @media screen and (max-width: 767px) {
+        font-size: clamp(18px, 3.5vw, 20px);
+    }
+    @media screen and (max-width: 500px){
+        padding-top: 30vw;
+    }
 `

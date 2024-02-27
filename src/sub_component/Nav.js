@@ -47,7 +47,7 @@ const NavWrap = styled.ul`
     box-sizing: border-box;
     li{
         position: relative;
-        font-size: clamp(0px, 1.9vw, 24px);
+        font-size: clamp(11px, 1.5vw, 24px);
         font-weight: 700;
         margin: auto 0;
         margin-left: 3.5vw;
@@ -59,13 +59,36 @@ const NavWrap = styled.ul`
             left: 50%;
             transform: translateX(-50%);
             top: -1.5vw;
-            width: 1vw;
-            height: 1vw;
+            width: 0.5vw;
+            height: 0.5vw;
             border-radius: 50%;
             background-color: rgba(255,255,255,0.8);
         }
     }
     li:first-child{
         margin-left: 0;
+    }
+    @media screen and (max-width: 768px){
+        li{
+            .active::before{
+                top: -0.9vw;
+                width: 0.8vw;
+                height: 0.8vw;
+            }
+        }
+    }
+    @media screen and (max-width: 500px){
+        border: 0;
+        width: 100%;
+        padding: 1vw 0;
+        
+    background-color: transparent;
+        li{
+            .active::before{
+                top: -0.6vw;
+                width: 1vw;
+                height: 1vw;
+            }
+        }
     }
 `

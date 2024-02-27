@@ -31,7 +31,7 @@ export default Contact;
 const ContactWrap = styled.div`
     padding: 0 12.5%;
     margin-bottom: 15vw;
-    padding-top: 10vw;
+    padding-top: 12vw;
     color: #fff;
     .title{
         border-bottom: 1px solid #fff;
@@ -82,10 +82,13 @@ const ContactWrap = styled.div`
     @media screen and (max-width: 767px) {
         .title{
             h2{
-                font-size: 3.5vw;
+                font-size: clamp(18px, 3.5vw, 20px);
                 line-height: 3.5vw;
                 color: #fff;
             }
         }
+    }
+    @media screen and (max-width: 500px){
+        padding-top: 20vw;
     }
 `

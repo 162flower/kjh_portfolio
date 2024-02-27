@@ -34,11 +34,26 @@ const HeaderWrap = styled.div`
     }
     .logo h1{
         color: #fff;
-        font-size: clamp(9px, 2.3vw, 40px);
+        font-size: clamp(15px, 2.3vw, 40px);
         line-height: 3em;
     }
     @media screen and (max-width: 1023px) {
         left: 20px;
         right: 20px;
+    }
+    @media screen and (max-width: 500px){
+        display: block;
+        border: 1px solid #fff;
+        border-top: none;
+        border-radius: 0 0 3vw 3vw;
+        background-color: rgba(0, 0, 0, 0.8);
+        .logo{
+            width: 100%;
+            border: 0;
+            background-color: transparent;
+        }
+        .logo h1{
+            line-height: 2.3em;
+        }
     }
 `

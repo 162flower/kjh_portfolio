@@ -55,7 +55,6 @@ const AboutMeWrap = styled.div`
     }
     .contentBox{
         display: flex;
-        flex-grow: 1;
         align-items: center;
         color: #fff;
         .photo{
@@ -67,6 +66,9 @@ const AboutMeWrap = styled.div`
             img{
                 width: 100%;
             }
+        }
+        .info{
+            flex-grow: 1;
         }
         .name{
             font-size: clamp(18px, 1.8vw, 30px);
@@ -132,7 +134,7 @@ const AboutMeWrap = styled.div`
     @media screen and (max-width: 767px) {
         .title{
             h2{
-                font-size: 3.5vw;
+                font-size: clamp(18px, 3.5vw, 20px);
                 line-height: 3.5vw;
                 color: #fff;
             }
@@ -168,6 +170,9 @@ const AboutMeWrap = styled.div`
                 line-height: 1.5em;
             }
         }
+    }
+    @media screen and (max-width: 500px){
+        padding-top: 20vw;
     }
     @media screen and (max-width: 450px) {
         .career{

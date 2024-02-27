@@ -14,5 +14,5 @@ const FooterWrap = styled.div`
     color: #fff;
     text-align: center;
     font-size: clamp(8px, 2vw, 18px);
-    margin-bottom: 2.5vw;
+    margin-bottom: 35vw;
 `
